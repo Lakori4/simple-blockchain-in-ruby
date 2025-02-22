@@ -74,10 +74,10 @@ def launcher
 	sleep 1.5
 	puts "Wait for the genesis (the first block of the blockchain)"
 	puts ""
-	for i in 1..10
+	for i in 1..5
 		print "."
 		sleep 0.5
-		break if i == 10
+		break if i == 5
 	end
 	puts "" 
 	puts "" 
