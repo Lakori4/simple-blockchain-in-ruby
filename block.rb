@@ -1,7 +1,5 @@
 
 require 'time'
-require 'json'
-
 class Block
   attr_reader :index, :timestamp, :transactions, 
 							:transactions_count, :previous_hash, 
@@ -24,14 +22,6 @@ class Block
 		@transactions_count  = transactions.size
     @previous_hash 		 	 = previous_hash
     @nonce, @hash  		 	 = compute_hash_with_proof_of_work
-  end
-
-  def from_json()
-    hash = {"index" => @index, "hash" => @hash, "timestamp" => @timestamp, "transactions" => @transactions, "transactions_count" => @transactions_count}
-    puts hash.to_json
-    File.open('./log.json', 'w') do |file|
-      file.write(hash.to_json)
-    end
   end
 
 
